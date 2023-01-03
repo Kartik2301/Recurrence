@@ -1,3 +1,5 @@
+document.getElementsByClassName("bookshelf")[0].classList.add("hide");
+document.getElementById("blog-btn").classList.add("btn-set-background");
 
 function sendEmail() {
     Email.send({
@@ -13,6 +15,26 @@ function sendEmail() {
         alert("mail sent successfully")
       });
   }
+
+document.getElementById("blog-btn").addEventListener("click", event => {
+  if(document.getElementsByClassName("blogs-div")[0].classList.contains("hide")) {
+    document.getElementsByClassName("bookshelf")[0].classList.add("hide");
+    document.getElementsByClassName("blogs-div")[0].classList.remove("hide");
+
+    document.getElementById("blog-btn").classList.add("btn-set-background");
+    document.getElementById("bookshelf-btn").classList.remove("btn-set-background");
+  }
+});
+
+document.getElementById("bookshelf-btn").addEventListener("click", event => {
+  if(document.getElementsByClassName("bookshelf")[0].classList.contains("hide")) {
+    document.getElementsByClassName("bookshelf")[0].classList.remove("hide");
+    document.getElementsByClassName("blogs-div")[0].classList.add("hide");
+
+    document.getElementById("blog-btn").classList.remove("btn-set-background");
+    document.getElementById("bookshelf-btn").classList.add("btn-set-background");
+  }
+});
 
 document.getElementById("submit-btn").addEventListener("click", event => {
     event.preventDefault()

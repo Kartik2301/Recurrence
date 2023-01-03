@@ -238,7 +238,7 @@
   }
 
 
-.cta *:focus {
+body *:focus {
     outline: none;
     box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
 }
@@ -250,4 +250,103 @@
     justify-content: center;
     text-align: center;
     padding: 0;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 2.4rem;
+    justify-content: center;
+    margin-bottom: 2.4rem;
+}
+
+.social-icon {
+    height: 2.4rem;
+    width: 2.4rem;
+}
+
+.bb-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meta-content-buttons {
+    /* background-color: #e67e22; */
+    text-align: center;
+}
+
+.section-blog-books {
+    margin-top: 3.6rem;
+}
+
+.blogs-div, .bookshelf {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2.4rem;
+    padding: 4.8rem;
+    margin-top: 3.2rem;
+    background-color: #fffcfb;
+    border: 0.2px dotted #777;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.blogs-div .blog {
+    cursor: pointer;
+}
+
+.blogs-div .blog .blog-title:hover {
+    text-decoration: underline;
+}
+
+.blog-title, .book-link {
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+    color: #555;
+}
+
+.blog-date {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #000;
+}
+
+.bookshelf {
+    /* display: flex;
+    flex-direction: column; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.6rem;
+}
+
+.book {
+    padding: 0.8rem;
+}
+
+.book-link {
+    color: #7347c2;
+}
+
+.portfolio-section-end {
+    width: 75%;
+    margin: 0 auto;
+    color: #333;
+    text-decoration: dashed;
+    margin-top: 4.8rem;
+}
+
+.footer-link:link,
+.footer-link:visited {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #767676;
+    transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+    color: #555;
 }

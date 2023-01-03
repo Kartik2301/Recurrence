@@ -49,6 +49,26 @@ ul {
     font-family: inherit;
 }
 
+
+.btn, .btn--full:link, .btn--full:visited {
+	background-color: #fdf2e9;
+	color: #333;
+}
+
+.btn--full:hover, .btn--full:active {
+	background-color: #cf711f;
+}
+
+.btn--outline:link, .btn--outline:visited {
+	background-color: #fff;
+	color: #555;
+}
+
+.btn--outline:hover, .btn--outline:active {
+	background-color: #cf711f;
+	box-shadow: inset 0 0 0 3px #fff;
+}
+
 .btn--form {
     background-color: #45260a;
     color: #fdf2e9;
@@ -135,4 +155,16 @@ ul {
 .gap-sm {
     row-gap: 5rem;
     column-gap: 2.5rem;
+}
+
+.margin-right-sm {
+    margin-right: 1rem;
+}
+
+.hide {
+    display: none;
+}
+
+.btn-set-background {
+   background-color: #ADE792;
 }
