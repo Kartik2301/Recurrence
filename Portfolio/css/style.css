@@ -1,0 +1,253 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #bdcccc; */
+    background-color: #ACC8E5;
+    height: 9.6rem;
+    padding: 0 48px;
+}
+
+.main-nav-list {
+    display: flex;
+    gap: 2.4rem;
+    align-items: center;
+    list-style: none;
+}
+
+.main-nav-link:link, .main-nav-link:visited {
+    display: inline-block;
+    color: #181818;
+    font-weight: 500;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+
+.main-nav-link:hover, .main-nav-link:active {
+    color: white;
+}
+
+.nav-icons {
+    height: 2.4rem;
+    width: 2.4rem;
+    color: #112A46;
+}
+
+.main-nav-list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* HERO SECTION */
+
+.section-info {
+	background-color: #fdf2e9;
+	padding: 4.8rem 0 0 0;
+    font-size: 1.5rem;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.hero-description {
+    
+    line-height: 1.4;
+    margin-bottom: 4.8rem;
+}
+
+.technology-heading {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.education-grid--2-cols {
+    grid-template-columns: 1fr 2fr;
+}
+
+.skills-set {
+    line-height: 1.8;
+    padding: 1.2rem;
+}
+
+.skill-ed-list-item {
+    margin-bottom: 1rem;
+}
+
+.main-info-items {
+    padding: 3.2rem 3.2rem 0 3.2rem;
+}
+
+.skill-ed-list-item-text {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #767676;
+    transition: all 0.3s;
+}
+
+.skill-ed-list-item-text {
+    color: #555;
+}
+
+.skill-ed-list-item-heading {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+/* PORTFOLIO SECTION */
+
+.portfolio-item {
+    transition: all 0.4s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-1.2rem);
+}
+
+.portfolio-image {
+    width: 50%;
+}
+
+.portolio-item-content {
+    text-align: start;
+}
+
+.portoflio-item-title {
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    margin-top: 1rem;
+}
+
+.portofio-item-description {
+    font-size: 1.4rem;
+    color: #555;
+}
+
+.tech-tags {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    text-align: center;
+}
+
+.tag {
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 0.4rem 0.4rem;
+    text-transform: uppercase;
+    color: #333;
+    border-radius: 100px;
+    font-weight: 600;
+    align-self: center;
+}
+
+.tag--flutter {
+    background-color: #86E5FF;
+}
+
+.tag--firebase {
+    background-color: #FFB26B;
+}
+
+.tag--dart {
+    background-color: #B5D5C5;
+}
+
+.tag--java, .tag--kotlin {
+    background-color: #DC3535;
+}
+
+.tag--xml {
+    background-color: #FCDDB0;
+}
+
+.tag--sqlite {
+    background-color: #BCEAD5;
+}
+
+.tag--python {
+    background-color: #FD841F;
+}
+
+.tag--misc {
+    background-color: #82CD47;
+}
+
+.tag--js {
+    background-color: #FED049;
+}
+
+.tag--react {
+    background-color: #009EFF;
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: #a9b9df;
+    margin-top: 9.6rem;
+    padding-top: 2rem;
+}
+
+
+.cta-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3.2rem;
+    row-gap: 2.4rem;
+  }
+  
+  .cta-form label {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+  }
+  
+  .cta-form input,
+  .cta-form select,
+  .footer-message-box {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.8rem;
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    background-color: #fdf2e9;
+    border-radius: 9px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .footer-message-box {
+    padding-bottom: 0;
+    margin: 0;
+  }
+  
+  .cta-form input::placeholder {
+    color: #aaa;
+  }
+
+
+.cta *:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}
+
+.footer-form-bottom {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+}
