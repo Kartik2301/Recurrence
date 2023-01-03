@@ -1,5 +1,10 @@
-document.getElementsByClassName("bookshelf")[0].classList.add("hide");
-document.getElementById("blog-btn").classList.add("btn-set-background");
+let bookshelf = document.getElementsByClassName("bookshelf")[0];
+let blogBtn =  document.getElementById("blog-btn");
+let blogsDiv = document.getElementsByClassName("blogs-div")[0];
+let bookshelfBtn = document.getElementById("bookshelf-btn");
+
+blogBtn.classList.add("btn-set-background");
+bookshelf.classList.add("hide");
 
 function sendEmail() {
     Email.send({
@@ -16,23 +21,23 @@ function sendEmail() {
       });
   }
 
-document.getElementById("blog-btn").addEventListener("click", event => {
-  if(document.getElementsByClassName("blogs-div")[0].classList.contains("hide")) {
-    document.getElementsByClassName("bookshelf")[0].classList.add("hide");
-    document.getElementsByClassName("blogs-div")[0].classList.remove("hide");
+blogBtn.addEventListener("click", event => {
+  if(blogsDiv.classList.contains("hide")) {
+    bookshelf.classList.add("hide");
+    blogsDiv.classList.remove("hide");
 
-    document.getElementById("blog-btn").classList.add("btn-set-background");
-    document.getElementById("bookshelf-btn").classList.remove("btn-set-background");
+    blogBtn.classList.add("btn-set-background");
+    bookshelfBtn.classList.remove("btn-set-background");
   }
 });
 
 document.getElementById("bookshelf-btn").addEventListener("click", event => {
-  if(document.getElementsByClassName("bookshelf")[0].classList.contains("hide")) {
-    document.getElementsByClassName("bookshelf")[0].classList.remove("hide");
-    document.getElementsByClassName("blogs-div")[0].classList.add("hide");
+  if(bookshelf.classList.contains("hide")) {
+    bookshelf.classList.remove("hide");
+    blogsDiv.classList.add("hide");
 
-    document.getElementById("blog-btn").classList.remove("btn-set-background");
-    document.getElementById("bookshelf-btn").classList.add("btn-set-background");
+    blogBtn.classList.remove("btn-set-background");
+    bookshelfBtn.classList.add("btn-set-background");
   }
 });
 
