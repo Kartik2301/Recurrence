@@ -46,6 +46,7 @@
 	background-color: #fdf2e9;
 	padding: 4.8rem 0 0 0;
     font-size: 1.5rem;
+    align-content: center;
 }
 
 .hero {
@@ -349,4 +350,18 @@ body *:focus {
 .footer-link:hover,
 .footer-link:active {
     color: #555;
+}
+
+.links-tab {
+    display: none;
+}
+
+.icon-link-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1.2rem;
 }

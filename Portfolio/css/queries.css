@@ -1,0 +1,56 @@
+@media(max-width: 58em) {
+   .grid--4-cols {
+        grid-template-columns: repeat(3, 1fr);
+   }
+}
+
+@media(max-width: 47em) {
+    .links-tab {
+        display: block;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .header {
+        justify-content: center;
+    }
+}
+
+@media(max-width: 41em) {
+    .grid--4-cols {
+        grid-template-columns: repeat(2, 1fr);
+   }
+}
+
+@media(max-width: 32em) {
+    /* .grid--4-cols {
+        grid-template-columns: repeat(2, 1fr);
+   } */
+   .hero {
+        grid-template-columns: 1fr;
+    }
+    html {
+        font-size: 56.25%;
+    }
+    .section-info {
+        padding: 2.4rem;
+    }
+}
+
+@media(max-width: 30em) {
+    html {
+        font-size: 62.5%;
+    }
+    .grid--4-cols {
+        grid-template-columns: repeat(1, 1fr);
+   }
+
+   .portfolio-item {
+    margin-bottom: 1.8rem;
+   }
+}
