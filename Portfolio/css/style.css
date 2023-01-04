@@ -40,6 +40,22 @@
     gap: 0.5rem;
 }
 
+.links-tab {
+    background-color: #ACC8E5;
+    padding: 0.8rem;
+    display: none;
+}
+
+.icon-link-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1.2rem;
+}
+
 /* HERO SECTION */
 
 .section-info {
@@ -352,17 +368,3 @@ body *:focus {
     color: #555;
 }
 
-.links-tab {
-    background-color: #ACC8E5;
-    display: none;
-}
-
-.icon-link-bottom {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    text-align: center;
-    padding: 1.2rem;
-}
