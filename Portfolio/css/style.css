@@ -353,6 +353,7 @@ body *:focus {
 }
 
 .links-tab {
+    background-color: #ACC8E5;
     display: none;
 }
 
