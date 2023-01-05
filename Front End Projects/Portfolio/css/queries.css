@@ -28,17 +28,17 @@
     .hero {
         grid-template-columns: 1fr;
     }
+    .hero-description {
+        margin-bottom: 0.4rem;
+    }
     .grid--4-cols {
         grid-template-columns: repeat(2, 1fr);
    }
 }
 
 @media(max-width: 32em) {
-    /* .grid--4-cols {
-        grid-template-columns: repeat(2, 1fr);
-   } */
     .section-info {
-        padding: 2.4rem;
+        padding: 0.6rem;
         padding-top: 0.4rem;
     }
 }
