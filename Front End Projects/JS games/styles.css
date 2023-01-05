@@ -1,0 +1,27 @@
+.square {
+	width: 200px;
+	height: 180px;
+	border: 2px solid black;
+}
+
+.grid {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-content: center;
+	height: 618px;
+	width: 618px;
+}
+
+.mole {
+	background-image: url("images/whack_mole/mole.jpg");
+	background-size: cover;
+}
+
+#score {
+	margin-right: 80%;
+}
+
+#count-down {
+	margin-left: auto; 
+}
