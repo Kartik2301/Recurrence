@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-4">
+        <div id="side-content">
+            <nav class="side-nav">
+              <ul class="nav-menu">
+                <li class="nav-item"><a href="#"><i class="fas fa-tachometer-alt"></i><span class="menu-text">Dashboard</span></a></li>
+                <li class="nav-item"><a href="#"><i class="fas fa-user"></i><span class="menu-text">Users</span></a></li>
+                <li class="nav-item"><a href="#"><i class="fas fa-user-plus"></i><span class="menu-text">Add Member</span></a></li>
+                <li class="nav-item active"><a href="#"><i class="fas fa-file-alt"></i><span class="menu-text">Posts</span></a></li>
+                <li class="nav-item"><a href="#"><i class="fas fa-comments"></i><span class="menu-text">Group Chat</span></a></li>
+              </ul>
+            </nav>
+          </div>
+    </div>
+    <div class="col-md-8">
+        <div class="group-content">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.members }}
+                </div>
+                <div class="form-group">
+                    {{ form.uploaded_image }}
+                </div>
+                <button class="btn btn-success" type="submit">Edit Details</button>
+              </form>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+body {
+    background-color: #fdf2e9;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: black
+}
+
+a:active, a:hover {
+    text-decoration: none;
+}
+
+.page-setup-padding {
+    padding: 4.8rem;
+}
+
+.move-top-right {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    padding: 0.4rem 0.6rem;
+    width: auto;
+}
