@@ -41,20 +41,17 @@ document.getElementById("bookshelf-btn").addEventListener("click", event => {
   }
 });
 
-document.getElementById("submit-btn").addEventListener("click", event => {
-    event.preventDefault()
-
-    let username = document.getElementById("full-name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
-
-    console.log(username);
-    console.log(email);
-    console.log(message);
-
-    document.getElementById("full-name").value = ""
-    document.getElementById("email").value = ""
-    document.getElementById("message").value = ""
-
-    // sendEmail(username, email, message);
+$(function () {
+  var frm = $('#contactForm');
+  frm.submit(function (ev) {
+      $.ajax({
+          type: frm.attr('method'),
+          url: 'http://127.0.0.1:8000/send_email/',
+          data: frm.serialize(),
+          success: function (data) {
+              $("#contactForm")[0].reset();
+          }
+      });
+      ev.preventDefault();
   });
+});

@@ -445,12 +445,13 @@
     <footer class="footer">
       <div class="space-around no-space-btm">
         <h3 class="heading-tertiary">Leave a Message</h3>
-        <form>
+        <form id="contactForm" method="POST" enctype="multipart/form-data">
           <div class="cta-form">
             <div>
               <input
                 id="full-name"
                 type="text"
+                name="full_name"
                 placeholder="Your Name"
                 required
               />
@@ -460,6 +461,7 @@
               <input
                 id="email"
                 type="email"
+                name="email"
                 placeholder="Email Address"
                 required
               />
@@ -472,7 +474,7 @@
             <div class="footer-textarea">
               <textarea
                 class="footer-message-box"
-                name=""
+                name="message"
                 id="message"
                 cols="60"
                 rows="5"
@@ -499,5 +501,7 @@
     ></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   </body>
 </html>

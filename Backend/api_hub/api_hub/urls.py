@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from apis.views import fetch_blogs
+from apis.views import fetch_blogs, send_email
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blogs/', fetch_blogs, name='fetch_blogs'),
+    path('send_email/', send_email, name='send_email'),
 ]

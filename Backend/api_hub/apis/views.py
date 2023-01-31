@@ -5,9 +5,7 @@ env = environ.Env()
 environ.Env.read_env()
 import pyrebase
 
-# Create your views here.
-def fetch_blogs(req):
-    firebase = pyrebase.initialize_app({
+config = {
         "apiKey": env('API_KEY'),
         "authDomain": env('AUTH_DOMAIN'),
         "projectId": env('PROJECT_ID'),
@@ -16,7 +14,11 @@ def fetch_blogs(req):
         "appId": env('APP_ID'),
         "measurementId": env('MEASUREMENT_ID'),
         "databaseURL": env('DATABASE_URL')
-    })
+    }
+
+# Create your views here.
+def fetch_blogs(req):
+    firebase = pyrebase.initialize_app(config)
 
     database = firebase.database()
 
@@ -31,3 +33,9 @@ def fetch_blogs(req):
         blogs.append([key, blog_item['title'], blog_item['date_time']])
 
     return HttpResponse(blogs)
+
+def send_email(req):
+    message = req.POST['message']
+    full_name = req.POST['full_name']
+    email = req.POST['email']
+    return HttpResponse(f"{message} {full_name} {email}")
