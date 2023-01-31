@@ -52,6 +52,10 @@ $(function () {
               $("#contactForm")[0].reset();
           }
       });
+      
+      document.getElementById("full-name").value = ""
+      document.getElementById("email").value = ""
+      document.getElementById("message").value = ""
       ev.preventDefault();
   });
 });
