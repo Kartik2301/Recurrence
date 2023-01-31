@@ -4,6 +4,7 @@ import environ
 env = environ.Env()
 environ.Env.read_env()
 import pyrebase
+from django.views.decorators.csrf import csrf_exempt
 
 config = {
         "apiKey": env('API_KEY'),
@@ -34,8 +35,10 @@ def fetch_blogs(req):
 
     return HttpResponse(blogs)
 
+@csrf_exempt
 def send_email(req):
     message = req.POST['message']
     full_name = req.POST['full_name']
     email = req.POST['email']
+    print(message, email, full_name)
     return HttpResponse(f"{message} {full_name} {email}")
