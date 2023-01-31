@@ -3,16 +3,22 @@
     width: 20rem; 
 }
 
-.groups-card-body {
-    background-color: #e4dad2;
+.groups-card-body, .group-members-card-body {
     cursor: pointer;
     transition: all 0.4s;
 }
 
-.groups-card-body:hover {
-    transform: translateY(-1rem);
+.groups-card-body {
+    background-color: #e4dad2;
 }
 
+.group-members-card-body {
+    background-color: #fdf2e9;
+}
+
+.group-members-card-body:hover, .groups-card-body:hover {
+    transform: translateY(-1rem);
+}
 
 #side-content .container {
     height: 100vh;
@@ -64,6 +70,10 @@
     box-shadow: 0 20px 0 0 #fff;
 }
 
+#dashboard-btn {
+    margin-left: 2rem;
+}
+
 #side-content .side-nav .nav-item.active::after {
     content: "";
     position: absolute;
@@ -77,4 +87,23 @@
 
 .group-content {
     padding: 3.2rem;
+}
+
+.sidebar-option-selected-none {
+    display: none;
+}
+
+#add_group_form input {
+    margin-bottom: 1.2rem;
+}
+
+.add-member-btn {
+    background-color: greenyellow;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    padding: 0.4rem 0.8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 2rem;
 }

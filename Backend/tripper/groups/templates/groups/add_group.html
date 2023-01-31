@@ -2,10 +2,15 @@
 
 {% block content %}
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_table }}
-    <input type="submit" value="Add Group">
-</form>
+<div class="page-setup-padding">
+    <form id="add_group_form" method="POST">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <div class="form-group">
+            <input class="btn btn-success mtop-sm" type="submit" value="Add Group">
+        </div>
+    </form>
+</div>
+
 
 {% endblock %}

@@ -11,7 +11,11 @@ class GroupModel(models.Model):
         return f"{self.name} - {self.description}"
     
 class GroupAdditionalDetailsModel(models.Model):
-    uploaded_image = models.ImageField(upload_to='group_thumbs/', null=True)
-    image_url = models.URLField(null=True, blank=True)
+    image_url = models.URLField()
     members = models.ManyToManyField(User)
     group_id = models.ForeignKey(GroupModel, on_delete=models.RESTRICT)
+
+class UploadGroupData(models.Model):
+    uploaded_image = models.ImageField(upload_to='group_thumbs/')
+
+    

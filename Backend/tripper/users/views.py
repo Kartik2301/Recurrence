@@ -29,7 +29,9 @@ def signup(req):
                 user = User.objects.create_user(
                     username=req.POST['username'],
                     password=req.POST['password1'], 
-                    email=req.POST['email'])
+                    email=req.POST['email'],
+                    first_name=req.POST['first_name'],
+                    last_name=req.POST['last_name'])
                 user.save()
                 login(req, user)
                 return redirect('users:view_profile')
@@ -79,7 +81,7 @@ def view_profile(req):
 
             user_details.save()
 
-            firebase_image_storage(req.user.username, user_details.uploaded_image.url)
+            firebase_image_storage(req.user.username, user_details.uploaded_image.url, req.user.id)
 
             return redirect(reverse('users:view_profile'))
         else:
@@ -87,13 +89,13 @@ def view_profile(req):
                           {'form': UserMediaDetailsForm(), 'error' : 'Form data invalid'})
 
 
-def firebase_image_storage(user_name, file_path):
-    thread_task = threading.Thread(target=firebase_image_storage_helper, args=[file_path, user_name])
+def firebase_image_storage(user_name, file_path, pk):
+    thread_task = threading.Thread(target=firebase_image_storage_helper, args=[file_path, user_name, pk])
     thread_task.setDaemon(True)
     thread_task.start()
 
 
-def firebase_image_storage_helper(file_path, user_name):
+def firebase_image_storage_helper(file_path, user_name, pk):
     env = environ.Env()
     environ.Env.read_env()
 
@@ -113,4 +115,12 @@ def firebase_image_storage_helper(file_path, user_name):
     file_path = str(file_path).replace('/', '\\')
     full_path = BASE_DIR + file_path
 
-    storage.child(f"profile_images/{user_name}.jpg").put(full_path)
+    rvalue = storage.child(f"profile_images/{user_name}.jpg").put(full_path)
+
+    download_link = f"{env('DOWNLOAD_BASE_URL')}{user_name}.jpg?alt=media&token={rvalue['downloadTokens']}"
+
+    print('the download link is', download_link)
+
+    user_details = UserMediaDetails.objects.filter(user_id=pk)[0]
+    user_details.image_url = download_link
+    user_details.save()

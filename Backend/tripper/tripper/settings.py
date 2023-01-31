@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'groups.apps.GroupsConfig',
     'driver.apps.DriverConfig',
+    'events.apps.EventsConfig',
 ]
 
 MIDDLEWARE = [

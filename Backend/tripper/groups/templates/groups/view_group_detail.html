@@ -2,6 +2,120 @@
 
 {% block content %}
 
-{{ group }}
+<div class="row">
+    <div class="col-md-3">
+        <div id="side-content">
+            <nav class="side-nav">
+              <ul class="nav-menu">
+                <li onclick="usersTab()" class="nav-item"><a href="#"><i class="fas fa-user"></i><span class="menu-text">Users</span></a></li>
+                <li onclick="postsTab()" class="nav-item active"><a href="#"><i class="fas fa-file-alt"></i><span class="menu-text">Posts</span></a></li>
+                <li onclick="chatTab()" class="nav-item"><a href="#"><i class="fas fa-comments"></i><span class="menu-text">Group Chat</span></a></li>
+              </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div id="members-form" class="mtop-lg sidebar-option-selected-none">
+            {% if is_owner %}
+                <button data-toggle="modal" data-target="#exampleModal" class="add-member-btn">Add Member &nbsp; <i class="fas fa-plus fa-large"></i></button>
+            {% endif %}
+            <div class="group-content">
+                <div class="row" style="display:flex; flex-wrap:wrap;">
+                    {% for member in members %}
+                    <div class="col-md-4">
+                        <div class="groups-card-body" style="width: 12rem; text-align: center; background-color: #fdf2e9; border: none;">
+                            <a href="#">
+                                <img src="{{ member.image_url }}" height="120px" width="120px" class="card-img" style="border-radius: 20px" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ member.username }}</h5>
+                                    <p>{{ member.full_name }}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add a User to this group</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" id="add-user-to-group">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" name="name_user" class="form-control" placeholder="User to be added">
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-md btn-success" type='submit'>
+                        </div>
+                        <input name="group_id" type="hidden" value="{{ group.id }}">
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="events-form" class="mtop-lg">
+            {% if is_owner %}
+                <button data-toggle="modal" data-target="#exampleModal2" class="add-member-btn">Add Event &nbsp; <i class="fas fa-plus fa-large"></i></button>
+            {% endif %}
+            <div class="group-content">
+                    {% for ev in events %}
+                    <div class="groups-card-body" style="width: auto; text-align: left; background-color: #fdf2e9; border: none;">
+                        <a href="#">
+                            <div class="card-body">
+                                <h5 style="color: blue; text-align: center;" class="card-title">{{ ev.event_name }}</h5>
+                                <small><b><i>{{ ev.event_time }}</i></b></small>
+                                <br>
+                                <small><b><i>Attending - {{ ev.attending_members.all | length }}</i></b></small>
+                                <p>{{ ev.description }}</p>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel1">Add a User to this group</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" id="add-event">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input class="form-control" name="event_name" type="text" placeholder="Enter name of the Event" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="event_description" cols="30" rows="12" style="overflow: scroll;" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="event_date_time">Date and Time of the event</label>
+                            <input class="form-control" id="event_date_time" name="event_time" type="datetime-local" required>
+                        </div>
+                        <input class="btn btn-success" type="submit" value="Add Event" onclick="addEvent({{ group.id }})" >
+                        <input name="group_id" type="hidden" value="{{ group.id }}">
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
 
 {% endblock %}

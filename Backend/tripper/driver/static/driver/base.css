@@ -1,4 +1,5 @@
 body {
+    font-family: "Rubik", "sans-serif";
     background-color: #fdf2e9;
 }
 
@@ -21,4 +22,12 @@ a:active, a:hover {
     right: 0%;
     padding: 0.4rem 0.6rem;
     width: auto;
+}
+
+.mtop-sm {
+    margin-top: 2rem;
+}
+
+.mtop-lg {
+    margin-top: 4rem;
 }
