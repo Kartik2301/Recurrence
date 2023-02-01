@@ -23,7 +23,7 @@ function createBlogElement(title, date_time, description) {
 
 function populateBlogs() {
 	$.ajax({
-		url : 'http://127.0.0.1:8000/blogs/',
+		url : 'https://kartiknema.pythonanywhere.com/blogs/',
 		method: 'GET',
 		success: data => {
 			for(let i = 0; i < data.length; i++) {
