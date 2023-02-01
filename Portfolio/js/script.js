@@ -6,21 +6,6 @@ let bookshelfBtn = document.getElementById("bookshelf-btn");
 blogBtn.classList.add("btn-set-background");
 bookshelf.classList.add("hide");
 
-function sendEmail() {
-    Email.send({
-      Host: "smtp.gmail.com",
-      Username: "sender@email_address.com",
-      Password: "Enter your password",
-      To: 'receiver@email_address.com',
-      From: "sender@email_address.com",
-      Subject: "Sending Email using javascript",
-      Body: "Well that was easy!!",
-    })
-      .then(function (message) {
-        alert("mail sent successfully")
-      });
-  }
-
 blogBtn.addEventListener("click", event => {
   if(blogsDiv.classList.contains("hide")) {
     bookshelf.classList.add("hide");
@@ -46,7 +31,7 @@ $(function () {
   frm.submit(function (ev) {
       $.ajax({
           type: frm.attr('method'),
-          url: 'http://127.0.0.1:8000/send_email/',
+          url: 'https://kartiknema.pythonanywhere.com/send_email/',
           data: frm.serialize(),
           success: function (data) {
               $("#contactForm")[0].reset();
