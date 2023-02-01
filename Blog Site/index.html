@@ -16,20 +16,8 @@
     <title>arc blogs</title>
 </head>
 <body>
-    <div class="group-content">
-        {% for ev in events %}
-        <div class="groups-card-body" style="width: auto; text-align: left; background-color: #fdf2e9; border: none;">
-            <a href="#">
-                <div class="card-body">
-                    <h5 style="color: blue; text-align: center;" class="card-title">{{ ev.event_name }}</h5>
-                    <small><b><i>{{ ev.event_time }}</i></b></small>
-                    <br>
-                    <small><b><i>Attending - {{ ev.attending_members.all | length }}</i></b></small>
-                    <p>{{ ev.description }}</p>
-                </div>
-            </a>
-        </div>
-        {% endfor %}
+    <div class="group-content page-setup-padding">
+
     </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
