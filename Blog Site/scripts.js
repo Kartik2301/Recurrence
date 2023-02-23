@@ -8,7 +8,7 @@ function createBlogElement(title, date_time, description) {
 					<h5 style="color: blue; text-align: center;" class="card-title">${title}</h5>
 					<small><b><i>${date_time}</i></b></small>
 					<br>
-					<p>${description}</p>
+					${description}
 				</div>
 			</a>
 		</div>
