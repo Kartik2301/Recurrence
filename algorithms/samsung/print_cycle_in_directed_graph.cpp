@@ -1,5 +1,0 @@
-/*
-
-The question was to print the vertices that form a cycle in a directed graph in sorted order. 
-
-*/
