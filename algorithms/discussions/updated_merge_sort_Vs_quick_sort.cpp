@@ -1,0 +1,154 @@
+/*
+
+Partition of elements in the array :
+In the merge sort, the array is parted into just 2 halves (i.e. n/2).
+whereas
+In case of quick sort, the array is parted into any ratio. There is no compulsion of dividing the array of elements into equal parts in quick sort.
+
+
+Worst case complexity :
+The worst case complexity of quick sort is O(n2) as there is need of lot of comparisons in the worst condition.
+whereas
+In merge sort, worst case and average case has same complexities O(n log n).
+
+
+
+Usage with datasets :
+Merge sort can work well on any type of data sets irrespective of its size (either large or small).
+whereas
+The quick sort cannot work well with large datasets
+
+
+Additional storage space requirement :
+Merge sort is not in place because it requires additional memory space to store the auxiliary arrays.
+whereas
+The quick sort is in place as it doesn’t require any additional storage.
+
+
+
+Efficiency :
+Merge sort is more efficient and works faster than quick sort in case of larger array size or datasets.
+whereas
+Quick sort is more efficient and works faster than merge sort in case of smaller array size or datasets.
+
+
+
+Sorting method :
+The quick sort is internal sorting method where the data is sorted in main memory.
+whereas
+The merge sort is external sorting method in which the data that is to be sorted cannot be accommodated in the memory and needed auxiliary memory for sorting.
+
+
+Stability :
+Merge sort is stable as two elements with equal value appear in the same order in sorted output as they were in the input unsorted array.
+whereas
+Quick sort is unstable in this scenario. But it can be made stable using some changes in code.
+
+
+Preferred for :
+Quick sort is preferred for arrays.
+whereas
+Merge sort is preferred for linked lists.
+
+
+
+Locality of reference :
+Quicksort exhibits good cache locality and this makes quicksort faster than merge sort (in many cases like in virtual memory environment).
+
+*/
+
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int partition(int arr[], int low, int high) {
+    int i = low -1;
+    int pivot = arr[high];
+    for(int j=low;j<=high-1;j++) {
+        if(arr[j] < pivot) {
+            i++;
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[i+1], &arr[high]);
+    return (i+1);
+}
+
+void quicksort(int arr[] , int low, int high) {
+    if(low < high) {
+        int pi = partition(arr,low,high);
+        quicksort(arr,low,pi-1);
+        quicksort(arr,pi+1,high);
+    }
+}
+
+
+
+
+void merge(int arr[], int low, int mid, int high) {
+    int n1 = mid - low + 1;
+    int n2 = high - mid;
+    int L[n1];
+    int R[n2];
+    int i,j;
+    for(i=0;i<n1;i++) {
+        L[i] = arr[low+i];
+    }
+    for(j=0;j<n2;j++) {
+        R[j] = arr[mid + j + 1];
+    }
+    i = 0;
+    j = 0;
+    int k = low;
+    while(i < n1 && j < n2) {
+        if(L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        } else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    while(i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    while(j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+void mergesort(int arr[], int low, int high) {
+    if(low < high) {
+        int mid = low + (high - low)/2;
+        mergesort(arr,low,mid);
+        mergesort(arr,mid+1,high);
+        merge(arr,low,mid,high);
+    }
+}
+
+
+
+int main() {
+    int arr[] = {10, 7, 8, 9, 1, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    mergesort(arr,0,n-1);
+    int i;
+    for(i=0;i<n;i++) {
+        cout<<arr[i]<<" ";
+    }
+}
