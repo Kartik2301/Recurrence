@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for item in some_list %}
+        <h1>{{item}}</h1>
+    {% endfor %}
+
+    {% if user_logged_in %}
+    <h1>Welcome back mark</h1>
+    {% endif %}
+
+    <ul>
+        {% for num in some_list %}
+            {% if num == 2 %}
+                <li>Two</li>
+            {% else %}
+                <li>{{num}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}

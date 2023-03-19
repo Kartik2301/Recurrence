@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>mark</h1>
+    <p>Total books : {{num_books}}</p>
+    <p>Num avail: {{ num_instances_avail }}</p>
+
+    {% if user.is_authenticated %}
+        <p>User is logged in</p>
+        <p>{{ user.get_username }}</p>
+        <a href="{% url 'logout' %}?next={{request.path}}">logout here</a>
+    {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}?next={{request.path}}">login here</a>
+    {% endif %}
+</body>
+</html>

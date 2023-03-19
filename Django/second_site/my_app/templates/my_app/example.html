@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <h1>Example html template connected mark</h1>
+    <a href="{% url 'my_app:variable' %}">Go to variable</a>
+    <img src="{% static 'my_app/forbes.png' %}" alt="mark">
+{% endblock %}
