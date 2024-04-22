@@ -18,11 +18,14 @@ Use Cases: Useful when traversing the graph matters more than traversing in a pa
   3. https://leetcode.com/problems/number-of-closed-islands/description/
 
 Cycle Detection
-
 1. Undirected Graph: https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1 [BFS / DFS]
 2. Directed Graph: https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1 DFS / [BFS (Kahn's algorithm)]
 3. https://www.geeksforgeeks.org/problems/eventual-safe-states/1
-4.  
+4. Printing cycle in undirected / Directed graph: https://cp-algorithms.com/graph/finding-cycle.html
+
+Toplogical Sort [DFS / BFS (Kahn's algorithm)]
+1. https://www.geeksforgeeks.org/problems/topological-sort/1
+2. Cycle Detection Using Toplogical Sort: https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1
 
  Time Complexity (BFS / DFS): O(V+E)
   
