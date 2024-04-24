@@ -33,6 +33,7 @@ Cycle Detection
 2. Directed Graph: https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1 DFS / [BFS (Kahn's algorithm)]
 3. https://www.geeksforgeeks.org/problems/eventual-safe-states/1
 4. Printing cycle in undirected / Directed graph: https://cp-algorithms.com/graph/finding-cycle.html [problem - https://cses.fi/problemset/task/1669]
+https://cp-algorithms.com/graph/finding-cycle.html
 
 Toplogical Sort [DFS / BFS (Kahn's algorithm)]
 Use Cases: Detect cycle in a graph, Find shortest distances in a DAG (single source shortest path algorithm), Count number of paths to a node in a DAG 
@@ -40,7 +41,6 @@ Use Cases: Detect cycle in a graph, Find shortest distances in a DAG (single sou
 2. Cycle Detection Using Toplogical Sort: https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1
 3. Shortest Path in Directed Acyclic Weighted Graph: https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1
 4. Count number of paths to a node in a DAG https://cses.fi/problemset/task/1681 - If the graph is a unweighted DAG we can calculate the all the ways to reach a node (or number of paths using the Toplogical sort algorithm).
-5. 
 
 Shortest Paths
 **Shortest path in unweighted [directed / undirected] graph - BFS**
@@ -54,6 +54,23 @@ Shortest Paths
 
 **Shortest path in weighted [directed / undirected] graph (no negative cycle) - Dijkstra**
 
-4. https://www.geeksforgeeks.org/problems/minimum-cost-path3833/1?page=2&category=Graph&sortBy=submissions
-5. 
+4. https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1
+5. https://www.geeksforgeeks.org/problems/minimum-cost-path3833/1?page=2&category=Graph&sortBy=submissions
+6. Find K shortest paths to the destination - https://cses.fi/problemset/task/1196/
 
+Finding bridges in the graph
+1. https://www.geeksforgeeks.org/problems/critical-connections/1?page=3&category=Graph&sortBy=submissions
+
+
+
+Path Based Questions:
+1. Find shortest path in non-weighted (or unit weighted) undirected or directed graph: BFS
+2. Count number of shortest paths in a non-weighted graph: BFS
+3. Count number of shortest paths in a weighted graph: Dijkstra
+4. Count the number of all paths (all the ways) to reach a node in a "DAG": Topological Sort
+5. Find the shortest path in a DAG: Topological Sort
+6. Print shortest paths: BFS / Dijkstra using Parent array
+7. Detect Negative cycle: Bellamn Ford or Floyd Warshall
+8. Single source shortest path algorithms: Dijkstra, Bellman Ford
+9. All shource shortest path algorithms: Floyd Warshall
+10. Find all the paths to a destination in a directed / undirected graph containing cycles (not a DAG): Backtracking, DP based solutions.
