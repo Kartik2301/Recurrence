@@ -11,6 +11,13 @@ Traversal Related Questions:
 - Left View: https://www.geeksforgeeks.org/problems/left-view-of-binary-tree/1
 - Diagonal Traversal: https://www.geeksforgeeks.org/problems/diagonal-traversal-of-binary-tree/1
 
+Core Traversals
+1. Inorder
+2. Pre-Order
+3. Post-Order
+4. Level Order
+5. Morris Traversal
+
 Construct Binary Tree
 - Construct a BT from Inorder/PreOrder traversal: https://www.geeksforgeeks.org/problems/construct-tree-1/1
 - Construct a BT from PreOrder/PostOrder traversal: https://www.geeksforgeeks.org/problems/tree-from-postorder-and-inorder/1
