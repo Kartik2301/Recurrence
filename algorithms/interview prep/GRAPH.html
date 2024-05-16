@@ -1,0 +1,76 @@
+<p dir="auto">Use Cases: Shortest path in an unweighted graph, Shortest path in a grid, Can be used to find the shortest weight in a graph with binary edge weights (<a href="https://cp-algorithms.com/graph/01_bfs.html" rel="nofollow">https://cp-algorithms.com/graph/01_bfs.html</a>)</p>
+<ol dir="auto">
+<li><a href="https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1?page=1&amp;category=BFS&amp;sortBy=submissions" rel="nofollow">https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1?page=1&amp;category=BFS&amp;sortBy=submissions</a></li>
+<li><a href="https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1?page=1&amp;category=BFS&amp;sortBy=submissions" rel="nofollow">https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1?page=1&amp;category=BFS&amp;sortBy=submissions</a></li>
+<li><a href="https://www.geeksforgeeks.org/problems/shortest-source-to-destination-path3544/1?page=1&amp;category=BFS&amp;sortBy=submissions" rel="nofollow">https://www.geeksforgeeks.org/problems/shortest-source-to-destination-path3544/1?page=1&amp;category=BFS&amp;sortBy=submissions</a></li>
+<li><a href="https://www.geeksforgeeks.org/problems/knight-walk4521/1?page=1&amp;category=BFS&amp;sortBy=submissions" rel="nofollow">https://www.geeksforgeeks.org/problems/knight-walk4521/1?page=1&amp;category=BFS&amp;sortBy=submissions</a></li>
+</ol>
+<p dir="auto">Spread / Fire Pattern: Pick the sources of fire and put them in the queue and start a multi source BFS</p>
+<ol dir="auto">
+<li><a href="https://leetcode.com/problems/rotting-oranges/description/" rel="nofollow">https://leetcode.com/problems/rotting-oranges/description/</a></li>
+<li><a href="https://leetcode.com/problems/as-far-from-land-as-possible/description/" rel="nofollow">https://leetcode.com/problems/as-far-from-land-as-possible/description/</a></li>
+<li><a href="https://leetcode.com/problems/01-matrix/description/" rel="nofollow">https://leetcode.com/problems/01-matrix/description/</a></li>
+<li><a href="https://cses.fi/problemset/task/1194" rel="nofollow">https://cses.fi/problemset/task/1194</a>&nbsp;(Fire Pattern + BFS)</li>
+</ol>
+<p dir="auto">DFS Depth First Search Use Cases: Useful when traversing the graph matters more than traversing in a particular order.</p>
+<ol dir="auto">
+<li><a href="https://leetcode.com/problems/number-of-islands/description/" rel="nofollow">https://leetcode.com/problems/number-of-islands/description/</a></li>
+<li><a href="https://www.geeksforgeeks.org/problems/replace-os-with-xs0052/1" rel="nofollow">https://www.geeksforgeeks.org/problems/replace-os-with-xs0052/1</a>?</li>
+<li><a href="https://leetcode.com/problems/number-of-closed-islands/description/" rel="nofollow">https://leetcode.com/problems/number-of-closed-islands/description/</a></li>
+</ol>
+<p dir="auto">Time Complexity (BFS / DFS): O(V+E)</p>
+<p dir="auto">Brief derivation: BFS will be called for all the vertices so O(V)</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto">
+<pre class="notranslate"><code>=&gt; For each vertice we'll explore it's neighbors 
+
+TC: O(V) + O(x1) + O(X2) + ... + O(Xv)
+  = O(V) + O(2E) : for undirected graph, as the edges are undirected so u -&gt; v and v -&gt; u are treated separately, hence the inner loop will run double the times
+  = O(V) + O(E) for directed graph
+</code></pre>
+<div class="zeroclipboard-container">&nbsp;</div>
+</div>
+<p dir="auto">Cycle Detection</p>
+<ol dir="auto">
+<li>Undirected Graph:&nbsp;<a href="https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1" rel="nofollow">https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1</a>&nbsp;[BFS / DFS]</li>
+<li>Directed Graph:&nbsp;<a href="https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1" rel="nofollow">https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1</a>&nbsp;DFS / [BFS (Kahn's algorithm)]</li>
+<li><a href="https://www.geeksforgeeks.org/problems/eventual-safe-states/1" rel="nofollow">https://www.geeksforgeeks.org/problems/eventual-safe-states/1</a></li>
+<li>Printing cycle in undirected / Directed graph:&nbsp;<a href="https://cp-algorithms.com/graph/finding-cycle.html" rel="nofollow">https://cp-algorithms.com/graph/finding-cycle.html</a>&nbsp;[problem -&nbsp;<a href="https://cses.fi/problemset/task/1669" rel="nofollow">https://cses.fi/problemset/task/1669</a>]&nbsp;<a href="https://cp-algorithms.com/graph/finding-cycle.html" rel="nofollow">https://cp-algorithms.com/graph/finding-cycle.html</a></li>
+</ol>
+<p dir="auto">Toplogical Sort [DFS / BFS (Kahn's algorithm)] Use Cases: Detect cycle in a graph, Find shortest distances in a DAG (single source shortest path algorithm), Count number of paths to a node in a DAG</p>
+<ol dir="auto">
+<li><a href="https://www.geeksforgeeks.org/problems/topological-sort/1" rel="nofollow">https://www.geeksforgeeks.org/problems/topological-sort/1</a></li>
+<li>Cycle Detection Using Toplogical Sort:&nbsp;<a href="https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1" rel="nofollow">https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1</a></li>
+<li>Shortest Path in Directed Acyclic Weighted Graph:&nbsp;<a href="https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1" rel="nofollow">https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1</a></li>
+<li>Count number of paths to a node in a DAG&nbsp;<a href="https://cses.fi/problemset/task/1681" rel="nofollow">https://cses.fi/problemset/task/1681</a>&nbsp;- If the graph is a unweighted DAG we can calculate the all the ways to reach a node (or number of paths using the Toplogical sort algorithm).</li>
+</ol>
+<p dir="auto">Shortest Paths&nbsp;<strong>Shortest path in unweighted [directed / undirected] graph - BFS</strong></p>
+<ol dir="auto">
+<li>Print Shortest path -&nbsp;<a href="https://cses.fi/problemset/task/1667" rel="nofollow">https://cses.fi/problemset/task/1667</a></li>
+<li>Count Number of shortest paths:&nbsp;<a href="https://www.geeksforgeeks.org/number-shortest-paths-unweighted-directed-graph/%5D(https://atcoder.jp/contests/abc211/tasks/abc211_d" rel="nofollow">https://www.geeksforgeeks.org/number-shortest-paths-unweighted-directed-graph/](https://atcoder.jp/contests/abc211/tasks/abc211_d</a></li>
+<li>Print all paths: Recurssion / Backtracking</li>
+<li>If the graph is DAG, then we an use toplogical sort to find the number of paths to each node.</li>
+</ol>
+<p dir="auto"><strong>Shortest path in weighted DAG - Topological Sort</strong></p>
+<p dir="auto"><strong>Shortest path in weighted [directed / undirected] graph (no negative cycle) - Dijkstra</strong></p>
+<ol dir="auto" start="4">
+<li><a href="https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1" rel="nofollow">https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1</a></li>
+<li><a href="https://www.geeksforgeeks.org/problems/minimum-cost-path3833/1?page=2&amp;category=Graph&amp;sortBy=submissions" rel="nofollow">https://www.geeksforgeeks.org/problems/minimum-cost-path3833/1?page=2&amp;category=Graph&amp;sortBy=submissions</a></li>
+<li>Find K shortest paths to the destination -&nbsp;<a href="https://cses.fi/problemset/task/1196/" rel="nofollow">https://cses.fi/problemset/task/1196/</a></li>
+</ol>
+<p dir="auto">Finding bridges in the graph</p>
+<ol dir="auto">
+<li><a href="https://www.geeksforgeeks.org/problems/critical-connections/1?page=3&amp;category=Graph&amp;sortBy=submissions" rel="nofollow">https://www.geeksforgeeks.org/problems/critical-connections/1?page=3&amp;category=Graph&amp;sortBy=submissions</a></li>
+</ol>
+<p dir="auto">Path Based Questions:</p>
+<ol dir="auto">
+<li>Find shortest path in non-weighted (or unit weighted) undirected or directed graph: BFS</li>
+<li>Count number of shortest paths in a non-weighted graph: BFS</li>
+<li>Count number of shortest paths in a weighted graph: Dijkstra</li>
+<li>Count the number of all paths (all the ways) to reach a node in a "DAG": Topological Sort</li>
+<li>Find the shortest path in a DAG: Topological Sort</li>
+<li>Print shortest paths: BFS / Dijkstra using Parent array</li>
+<li>Detect Negative cycle: Bellamn Ford or Floyd Warshall</li>
+<li>Single source shortest path algorithms: Dijkstra, Bellman Ford</li>
+<li>All shource shortest path algorithms: Floyd Warshall</li>
+<li>Find all the paths to a destination in a directed / undirected graph containing cycles (not a DAG): Backtracking, DP based solutions.</li>
+</ol>
